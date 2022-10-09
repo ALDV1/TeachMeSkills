@@ -4,5 +4,6 @@ out/
 !**/src/test/**/out/
 *.idea/
 *.xml
+*.iml
 ### Mac OS ###
 .DS_Store
