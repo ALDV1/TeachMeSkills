@@ -12,20 +12,17 @@ package com.homework6;
        Выведите на экран текущее состояние всех трех карточек.
  */
 public class CreditCard {
+    private String accountNum;
+    private double currentSum;
 
     public CreditCard(String accountNum, double initAmount) {
         this.accountNum = accountNum;
         this.currentSum = initAmount;
         printInfo();
     }
-
     public CreditCard() {
         printInfo();
     }
-
-    private String accountNum;
-    private double currentSum;
-
     public double accrual(double value) {
         System.out.println("refill " + value);
         return currentSum += value;
