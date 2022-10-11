@@ -12,6 +12,8 @@ package com.homework6;
        Выведите на экран текущее состояние всех трех карточек.
  */
 public class CreditCard {
+    private String accountNum;
+    private double currentSum;
 
     public CreditCard(String accountNum, double initAmount) {
         this.accountNum = accountNum;
@@ -22,9 +24,6 @@ public class CreditCard {
     public CreditCard() {
         printInfo();
     }
-
-    private String accountNum;
-    private double currentSum;
 
     public double accrual(double value) {
         System.out.println("refill " + value);
@@ -38,6 +37,5 @@ public class CreditCard {
 
     public void printInfo() {
         System.out.println("account number: " + accountNum + "\ncurrent sum: " + currentSum);
-
     }
 }
