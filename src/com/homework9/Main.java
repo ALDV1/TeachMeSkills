@@ -11,38 +11,38 @@ public class Main {
         boolean belarusAlreadyBeen = false;
         boolean ukraineAlreadyBeen = false;
 
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < hen.length; ++i) {
             int randNumber = 1 + (int) (Math.random() * 4);
             if (randNumber == 1) {
                 hen[i] = new MoldovanHen();
                 if (!moldovaAlreadyBeen) {
                     System.out.println(hen[i].getDescription());
+                    moldovaAlreadyBeen = true;
                 }
-                moldovaAlreadyBeen = true;
                 continue;
             }
             if (randNumber == 2) {
                 hen[i] = new RussianHen();
                 if (!russiaAlreadyBeen) {
                     System.out.println(hen[i].getDescription());
+                    russiaAlreadyBeen = true;
                 }
-                russiaAlreadyBeen = true;
                 continue;
             }
             if (randNumber == 3) {
                 hen[i] = new BelarusianHen();
                 if (!belarusAlreadyBeen) {
                     System.out.println(hen[i].getDescription());
+                    belarusAlreadyBeen = true;
                 }
-                belarusAlreadyBeen = true;
                 continue;
             }
             if (randNumber == 4) {
                 hen[i] = new UkrainianHen();
                 if (!ukraineAlreadyBeen) {
                     System.out.println(hen[i].getDescription());
+                    ukraineAlreadyBeen = true;
                 }
-                ukraineAlreadyBeen = true;
             }
         }
         System.out.println("count of eggs per year: " + Hen.eggsOfAll);
