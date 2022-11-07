@@ -11,11 +11,12 @@ public class DifferentSymbols {
             arrWords[i] = console.nextLine();
         }
         for (String e : arrWords) {
-            boolean flag = false;
-            for (int i = 0; i < e.length() - 1; ++i) {
-                for (int j = i + 1; j < e.length() - 1; ++j) {
-                    if (e.charAt(i) != e.charAt(j)) {
-                        flag = true;
+            boolean flag = true;
+            for (int i = 0; i < e.length(); ++i) {
+                for (int j = i + 1; j < e.length(); ++j) {
+                    if (e.charAt(i) == e.charAt(j)) {
+                        flag = false;
+                        break;
                     }
                 }
             }
