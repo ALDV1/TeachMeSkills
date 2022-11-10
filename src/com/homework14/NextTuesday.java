@@ -31,16 +31,12 @@ public class NextTuesday {
 
         DayOfWeek dayOfWeek;
         if (date.getDayOfWeek() == DayOfWeek.TUESDAY) {
-            System.out.println("next tuesday will be " + date.plusDays(7));
-        } else {
-            while (true) {
-                if (date.getDayOfWeek() == DayOfWeek.TUESDAY) {
-                    System.out.println("next tuesday will be " + date);
-                    break;
-                } else {
-                    date = date.plusDays(1);
-                }
-            }
+            date = date.plusDays(7);
         }
+        while (date.getDayOfWeek() != DayOfWeek.TUESDAY) {
+            date = date.plusDays(1);
+        }
+        System.out.println("next tuesday will be " + date);
     }
+
 }
