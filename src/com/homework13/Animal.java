@@ -1,8 +1,6 @@
 package com.homework13;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 public class Animal {
     LinkedList<String> animalName = new LinkedList<>();
