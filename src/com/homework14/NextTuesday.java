@@ -28,15 +28,16 @@ public class NextTuesday {
 
         LocalDate date = LocalDate.of(year, month, day);
         System.out.println(date);
+        // переменная, которая хранит дату следующего вторника
+        LocalDate nextTuesday = date;
 
-        DayOfWeek dayOfWeek;
         if (date.getDayOfWeek() == DayOfWeek.TUESDAY) {
-            date = date.plusDays(7);
+            nextTuesday = date.plusDays(7);
         }
         while (date.getDayOfWeek() != DayOfWeek.TUESDAY) {
-            date = date.plusDays(1);
+            nextTuesday = date.plusDays(1);
         }
-        System.out.println("next tuesday will be " + date);
+        System.out.println("next tuesday will be " + nextTuesday);
     }
 
 }
