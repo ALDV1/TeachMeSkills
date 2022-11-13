@@ -28,7 +28,7 @@ public class NextTuesday {
 
         LocalDate date = LocalDate.of(year, month, day);
         System.out.println(date);
-        // переменная, которая хранит дату следующего вторника
+
         LocalDate nextTuesday = date;
 
         if (date.getDayOfWeek() == DayOfWeek.TUESDAY) {
