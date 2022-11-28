@@ -12,30 +12,27 @@ public class Main {
         HashMap<Integer, String> idName = new HashMap<>();
         FileInputStream users = new FileInputStream("/Users/alexander/Desktop/IdeaProjects/" +
                 "TeachMeSkills/src/com/homework15/Names");
-        StringBuilder allNames = new StringBuilder();
+        StringBuilder text = new StringBuilder();
 
         int c;
-        while((c = users.read()) !=-1){
-            allNames.append((char)c);
+        while ((c = users.read()) != -1) {
+            text.append((char) c);
         }
         users.close();
-         String[] names = allNames.toString().split("\n");
-        for(int i = 0;i<names.length;++i){
-            idName.put(i,names[i]);
+
+        String[] names = text.toString().split("\n");
+        for (int i = 0; i < names.length; ++i) {
+            idName.put(i, names[i]);
         }
         idName.forEach((id, name) -> System.out.println(name));
+
         System.out.println("\n====================================\n");
 
-        ArrayList<String> list = new ArrayList<>();
-        for(Map.Entry<Integer,String> elements : idName.entrySet()){
-            if(elements.getKey() == 1 || elements.getKey() == 2 || elements.getKey() == 5
-            || elements.getKey() == 8 || elements.getKey() == 9 || elements.getKey() == 13){
-                list.add(elements.getValue());
-            }
-        }
-        list.stream().filter(symbols -> symbols.length() %2 != 0).map(x -> {
-            StringBuilder str = new StringBuilder();
-            return str.append(x).reverse();
-        }).forEach(System.out::println);
+        List<String> result = idName.entrySet().stream()
+                .filter(id -> id.getKey() == 1 || id.getKey() == 2 || id.getKey() == 5 ||
+                        id.getKey() == 8 || id.getKey() == 9 || id.getKey() == 13)
+                .map(Map.Entry::getValue).filter(name -> name.length() % 2!= 0)
+                .map(name -> String.valueOf(new StringBuilder(name).reverse())).toList();
+        System.out.println(result);
     }
 }
