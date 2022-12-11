@@ -2,10 +2,11 @@ package com.homework15;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -20,7 +21,7 @@ public class Main {
         }
         users.close();
 
-        String[] names = text.toString().split("\n");
+        String[] names = text.toString().split(" ");
         for (int i = 0; i < names.length; ++i) {
             idName.put(i, names[i]);
         }
